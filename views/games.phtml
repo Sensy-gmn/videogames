@@ -1,0 +1,33 @@
+<main id="games_page">
+    
+    <h1>All games</h1>
+    
+    <section class="search-box">
+        <input id="game_search" type="search" placeholder="Rechercher un jeu ..."/>
+    </section>
+    
+    <section id="searchResults" class="games-list">
+        
+        <?php foreach( $games as $game ) : ?>
+    
+            <article style="background: url('<?= $game->getJacket() ?>');background-position: center;background-size: cover;background-repeat: norepeat;">
+                <div class="body">
+                    <h3>
+                        <?= $game->getTitle() ?>
+                    </h3>
+                    <div>
+                        <span>
+                            <i class="bi bi-calendar-event"></i> <?= $game->getReleaseYear() ?>
+                        </span>
+                        <a href="<?= routePath('addToLibrary', ['id' => $game->getId() ]) ?>" class="add-to-library">
+                            <i class="bi bi-bookmark-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        
+        <?php endforeach; ?>
+        
+    </section>
+    
+</main>

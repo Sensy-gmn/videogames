@@ -1,0 +1,43 @@
+<main>
+    
+    <h1>New Game</h1>
+    
+    <form action="<?= routePath('addGame') ?>" method="POST" enctype="multipart/form-data">
+        
+        <p>
+            <input type="text" name="title"/>
+        </p>
+        <p>
+            <input type="number" name="released_year"/>
+        </p>
+        <p>
+            <input type="file" name="jacket"/>
+        </p>
+        <p>
+            <select name="category_id">
+                
+                <?php foreach( $categories as $category ) : ?>
+                
+                    <option value="<?= $category->getId() ?>"><?= $category->getName() ?></option>
+                
+                <?php endforeach; ?>
+                
+            </select>
+        </p>
+        <p>
+            <select name="plateform_id">
+                
+                <?php foreach( $plateforms as $plateform ) : ?>
+                
+                    <option value="<?= $plateform->getId() ?>"><?= $plateform->getName() ?></option>
+                
+                <?php endforeach; ?>
+                
+            </select>
+        </p>
+        
+        <button type="submit">Add</button>
+        
+    </form>
+    
+</main>

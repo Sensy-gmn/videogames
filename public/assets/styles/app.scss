@@ -1,0 +1,99 @@
+// cd sites/PHP/php4/videogames/public/assets/styles
+
+$primary: #7756f6;
+$dark: #343434;
+$light: #f1f1f1;
+$error: #ff222b;
+$warning: #ff8822;
+$succes: #44a365;
+$info: #229aff;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    
+    body {
+        position: relative;
+        font-size: 1.6rem;
+        margin: 0;
+        padding: 0;
+        background-color: $dark;
+        color: $light;
+        font-family: 'Roboto', sans-serif;
+        min-height: 100vh;
+        
+        & > main {
+            width: 100%;
+            min-height: 100vh;
+            padding-top: 7rem;
+        }
+    }
+}
+
+h1 {
+    color: $primary;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: $primary;
+    border: 2px solid $primary;
+    color: $light;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    text-decoration: none;
+    margin: 1rem;
+    
+    &:first-child() {
+        margin-left: 0;
+    }
+    
+    &:last-child() {
+        margin-right: 0;
+    }
+}
+
+#flashbag {
+    
+    position: absolute;
+    left: 50%;
+    top: 10vh;
+    transform: translateX(-50%);
+    border-radius: .5rem;
+    padding: 0 2rem;
+    
+    &.msg-error {
+        background: $error;
+        border: 2px solid $error;
+        color: $light;
+    }
+    
+    &.msg-warning {
+        background: $warning;
+        border: 2px solid $warning;
+        color: $light;
+    }
+    
+    &.msg-succes {
+        background: $succes;
+        border: 2px solid $succes;
+        color: $light;
+    }
+    
+    &.msg-info {
+        background: $info;
+        border: 2px solid $info;
+        color: $light;
+    }
+}
+
+@import './scss/header.scss';
+@import './scss/footer.scss';
+@import './scss/home.scss';
+@import './scss/games.scss';
+@import './scss/profile.scss';

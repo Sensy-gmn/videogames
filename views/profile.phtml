@@ -1,0 +1,51 @@
+<main id="profile">
+    
+    <h1>Profile</h1>
+    
+    <section>
+        
+        <h2><?= $user->getUsername() ?></h2>
+        
+    </section>
+    
+    <section>
+        
+        <h2>My games library</h2>
+        
+        <?php if( count( $user->getGames() ) ) : ?>
+        
+            <div id="user_games">
+                
+                <?php foreach( $user->getGames() as $game ) : ?>
+                
+                    <article style="background: url('<?= $game->getJacket() ?>');background-position: center;background-size: cover;background-repeat: norepeat;">
+                        <div class="body">
+                            <h3>
+                                <?= $game->getTitle() ?>
+                            </h3>
+                            <div>
+                                <span>
+                                    <i class="bi bi-calendar-event"></i> <?= $game->getReleaseYear() ?>
+                                </span>
+                                <a href="" class="add-to-library">
+                                    <i class="bi bi-bookmark-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                
+                <?php endforeach; ?>
+                
+            </div>
+        
+        <?php else : ?>
+        
+            <p>
+                Your library's empty.
+            </p>
+        
+        <?php endif; ?>
+        
+    </section>
+    
+</main>
